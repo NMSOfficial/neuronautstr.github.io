@@ -1,0 +1,92 @@
+/* Custom smooth & soft UI tweaks */
+:root{
+  --transition-fast: 180ms;
+  --transition-medium: 300ms;
+  --transition-slow: 600ms;
+  --soft-ease: cubic-bezier(.22,.9,.32,1);
+}
+
+/* Page load fade-in */
+body{
+  transition: opacity var(--transition-slow) var(--soft-ease), transform var(--transition-slow) var(--soft-ease);
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+body.page-is-loading{
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* Gentle default transitions */
+*{
+  transition-property: background-color, color, border-color, box-shadow, transform, opacity;
+  transition-duration: var(--transition-medium);
+  transition-timing-function: var(--soft-ease);
+}
+
+/* Avoid images and media heavy transforms unless hovered */
+img, video, svg{transition: opacity var(--transition-medium) var(--soft-ease), transform var(--transition-medium) var(--soft-ease);}
+
+/* Soft hover for links/buttons */
+a, button{cursor: pointer}
+a:hover, button:hover{transform: translateY(-2px);}
+
+/* Make group hover scales softer */
+.group:hover .group-hover\:scale-105{transform: scale(1.03);} /* softer than 1.05 */
+
+/* Focus outlines for accessibility */
+:focus{outline: 3px solid rgba(59,130,246,0.18); outline-offset: 3px}
+
+/* Subtle shadow smoothing for cards */
+.shadow-testimonial, .shadow-pricing{transition: box-shadow var(--transition-medium) var(--soft-ease)}
+.shadow-testimonial:hover, .shadow-pricing:hover{box-shadow: 0 18px 34px rgba(16,24,40,0.08)}
+
+/* Slightly reduce abrupt color jumps on theme toggle */
+.transition-theme{transition: background-color var(--transition-medium) var(--soft-ease), color var(--transition-medium) var(--soft-ease)}
+
+/* Reduce motion for users who prefer reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  *{transition: none !important; animation: none !important}
+}
+
+/* Override some animate.css defaults to make animations softer */
+.fadeInUp, .fadeInDown, .fadeInLeft, .fadeInRight, .fadeIn {
+  animation-duration: 700ms !important;
+  animation-timing-function: cubic-bezier(.22,.9,.32,1) !important;
+}
+
+/* Stagger helpers: use CSS-only stagger-child to avoid WOW hiding elements */
+.stagger > * { /* keep visible by default; animations applied to .stagger-child */ }
+
+/* Stagger-child: CSS animation triggered by adding .play (JS will set animationDelay) */
+.stagger-child { opacity: 0; transform: translateY(10px); }
+.stagger-child.play {
+  animation-name: staggerFadeUp;
+  animation-duration: 700ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(.22,.9,.32,1);
+}
+
+@keyframes staggerFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button / CTA / link polish */
+a.inline-flex, a.inline-block, button, .btn, .rounded-md {
+  transition: transform var(--transition-fast) var(--soft-ease), box-shadow var(--transition-fast) var(--soft-ease), background-color var(--transition-medium) var(--soft-ease);
+}
+
+/* Subtle lift + shadow on hover for actionable items */
+a.inline-flex:hover, a.inline-block:hover, button:hover, .btn:hover, .rounded-md:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(2,6,23,0.08);
+}
+
+/* Softer focus for keyboard users */
+a:focus, button:focus, .rounded-md:focus { box-shadow: 0 0 0 6px rgba(59,130,246,0.08); }
+
+/* Reduce abrupt color inversion on theme switch */
+.transition-theme, .bg-primary, .text-white { transition: background-color var(--transition-medium) var(--soft-ease), color var(--transition-medium) var(--soft-ease); }

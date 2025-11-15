@@ -90,3 +90,442 @@ a:focus, button:focus, .rounded-md:focus { box-shadow: 0 0 0 6px rgba(59,130,246
 
 /* Reduce abrupt color inversion on theme switch */
 .transition-theme, .bg-primary, .text-white { transition: background-color var(--transition-medium) var(--soft-ease), color var(--transition-medium) var(--soft-ease); }
+
+/* ----------------------------
+   Cohesive reveal animations
+----------------------------- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 700ms var(--soft-ease), transform 700ms var(--soft-ease);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ----------------------------
+   Achievement overview cards
+----------------------------- */
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.achievement-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  color: #f8fafc;
+  background: var(--achievement-bg, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--achievement-border, rgba(255, 255, 255, 0.12));
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 160px;
+  isolation: isolate;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.achievement-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.16), transparent 60%);
+  opacity: 0;
+  transition: opacity 400ms var(--soft-ease);
+  z-index: -1;
+}
+
+.achievement-card:hover::after {
+  opacity: 1;
+}
+
+.achievement-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--achievement-icon-bg, rgba(255, 255, 255, 0.16));
+  color: var(--achievement-accent, #f8fafc);
+  backdrop-filter: blur(12px);
+}
+
+.achievement-card__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.achievement-card__eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.8);
+}
+
+.achievement-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.achievement-card__meta {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(248, 250, 252, 0.75);
+}
+
+.achievement-card[data-theme="sunrise"] {
+  --achievement-bg: linear-gradient(135deg, rgba(251, 191, 36, 0.16), rgba(249, 115, 22, 0.16));
+  --achievement-border: rgba(251, 191, 36, 0.32);
+  --achievement-accent: #fcd34d;
+  --achievement-icon-bg: rgba(251, 191, 36, 0.25);
+}
+
+.achievement-card[data-theme="emerald"] {
+  --achievement-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(52, 211, 153, 0.16));
+  --achievement-border: rgba(16, 185, 129, 0.28);
+  --achievement-accent: #34d399;
+  --achievement-icon-bg: rgba(16, 185, 129, 0.25);
+}
+
+.achievement-card[data-theme="sky"] {
+  --achievement-bg: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(14, 165, 233, 0.18));
+  --achievement-border: rgba(59, 130, 246, 0.28);
+  --achievement-accent: #60a5fa;
+  --achievement-icon-bg: rgba(59, 130, 246, 0.24);
+}
+
+.achievement-card[data-theme="violet"] {
+  --achievement-bg: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.16));
+  --achievement-border: rgba(168, 85, 247, 0.28);
+  --achievement-accent: #d8b4fe;
+  --achievement-icon-bg: rgba(168, 85, 247, 0.24);
+}
+
+/* ----------------------------
+   Hero highlight feature list
+----------------------------- */
+.hero-highlight-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 0 auto 2.25rem;
+  max-width: 720px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+@media (min-width: 640px) {
+  .hero-highlight-grid {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-highlight-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.hero-highlight {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  backdrop-filter: blur(12px);
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.hero-highlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 60%);
+  transition: opacity 360ms var(--soft-ease);
+}
+
+.hero-highlight:hover::after {
+  opacity: 1;
+}
+
+.hero-highlight__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 1rem;
+  background: var(--hero-highlight-icon-bg, linear-gradient(135deg, #3758f9, #1b44c8));
+  color: var(--hero-highlight-icon-color, #fff);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
+}
+
+.hero-highlight__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.hero-highlight__title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.hero-highlight__desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(226, 232, 240, 0.82);
+}
+
+.hero-highlight[data-tone="sunrise"] {
+  --hero-highlight-icon-bg: linear-gradient(135deg, #f97316, #f59e0b);
+}
+
+.hero-highlight[data-tone="sky"] {
+  --hero-highlight-icon-bg: linear-gradient(135deg, #38bdf8, #3b82f6);
+}
+
+.hero-highlight[data-tone="mint"] {
+  --hero-highlight-icon-bg: linear-gradient(135deg, #34d399, #10b981);
+}
+
+.hero-highlight[data-tone="violet"] {
+  --hero-highlight-icon-bg: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+/* ----------------------------
+   Rating indicator pills
+----------------------------- */
+.rating-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+  color: #fbbf24;
+  filter: drop-shadow(0 4px 10px rgba(251, 191, 36, 0.35));
+}
+
+.rating-indicator svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 640px) {
+  .achievement-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+/* ----------------------------
+   Card hero area & badges
+----------------------------- */
+.card-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border-radius: 1rem;
+  overflow: hidden;
+  color: #f8fafc;
+  background: var(--card-hero-bg, linear-gradient(135deg, #4338ca, #2563eb));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.card-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.24), transparent 60%);
+  opacity: 0;
+  transition: opacity 400ms var(--soft-ease);
+}
+
+.card-hero:hover::after {
+  opacity: 1;
+}
+
+.card-hero__icon {
+  position: relative;
+  z-index: 1;
+  width: 88px;
+  height: 88px;
+  border-radius: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+}
+
+.card-hero__icon svg {
+  width: 48px;
+  height: 48px;
+  color: inherit;
+}
+
+.card-hero[data-tone="sunrise"] {
+  --card-hero-bg: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+.card-hero[data-tone="emerald"] {
+  --card-hero-bg: linear-gradient(135deg, #10b981, #22d3ee);
+}
+
+.card-hero[data-tone="ocean"] {
+  --card-hero-bg: linear-gradient(135deg, #2563eb, #38bdf8);
+}
+
+.card-hero[data-tone="violet"] {
+  --card-hero-bg: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.card-hero[data-tone="mint"] {
+  --card-hero-bg: linear-gradient(135deg, #14b8a6, #22c55e);
+}
+
+.card-hero[data-tone="slate"] {
+  --card-hero-bg: linear-gradient(135deg, #1e293b, #475569);
+}
+
+.card-hero[data-tone="sky"] {
+  --card-hero-bg: linear-gradient(135deg, #3b82f6, #0ea5e9);
+}
+
+.card-hero[data-tone="magenta"] {
+  --card-hero-bg: linear-gradient(135deg, #ec4899, #f97316);
+}
+
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--badge-bg, rgba(55, 88, 249, 0.12));
+  color: var(--badge-color, #1f3ad7);
+  line-height: 1.2;
+}
+
+.pill-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pill-badge[data-tone="sunrise"] {
+  --badge-bg: rgba(250, 204, 21, 0.18);
+  --badge-color: #b45309;
+}
+
+.pill-badge[data-tone="emerald"] {
+  --badge-bg: rgba(16, 185, 129, 0.18);
+  --badge-color: #047857;
+}
+
+.pill-badge[data-tone="sky"] {
+  --badge-bg: rgba(59, 130, 246, 0.18);
+  --badge-color: #1d4ed8;
+}
+
+.pill-badge[data-tone="violet"] {
+  --badge-bg: rgba(168, 85, 247, 0.18);
+  --badge-color: #6b21a8;
+}
+
+.pill-badge[data-tone="magenta"] {
+  --badge-bg: rgba(236, 72, 153, 0.2);
+  --badge-color: #be185d;
+}
+
+.pill-badge[data-tone="mint"] {
+  --badge-bg: rgba(20, 184, 166, 0.18);
+  --badge-color: #0f766e;
+}
+
+.pill-badge[data-tone="slate"] {
+  --badge-bg: rgba(100, 116, 139, 0.18);
+  --badge-color: #1e293b;
+}
+
+.card-footnote {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* ----------------------------
+   Icon circle tokens
+----------------------------- */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 9999px;
+  background: var(--icon-circle-bg, linear-gradient(135deg, #3758f9, #1b44c8));
+  color: #f8fafc;
+}
+
+.icon-circle svg {
+  width: 26px;
+  height: 26px;
+}
+
+.icon-circle[data-tone="sunrise"] {
+  --icon-circle-bg: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+.icon-circle[data-tone="emerald"] {
+  --icon-circle-bg: linear-gradient(135deg, #10b981, #22c55e);
+}
+
+.icon-circle[data-tone="violet"] {
+  --icon-circle-bg: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.icon-circle[data-tone="sky"] {
+  --icon-circle-bg: linear-gradient(135deg, #3b82f6, #0ea5e9);
+}
+
+.icon-circle[data-tone="magenta"] {
+  --icon-circle-bg: linear-gradient(135deg, #ec4899, #f472b6);
+}
+
+.icon-circle[data-tone="mint"] {
+  --icon-circle-bg: linear-gradient(135deg, #14b8a6, #22c55e);
+}
+
+.icon-circle[data-tone="slate"] {
+  --icon-circle-bg: linear-gradient(135deg, #1f2937, #4b5563);
+}

@@ -190,6 +190,49 @@
       });
     } catch (e) {}
 
+    // Intersection Observer driven reveal animations
+    try {
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      if (revealElements.length) {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        const markVisible = (element) => {
+          const delay = element.dataset.revealDelay;
+          if (delay) {
+            element.style.transitionDelay = delay;
+          }
+          element.classList.add('is-visible');
+        };
+
+        if (prefersReducedMotion.matches) {
+          revealElements.forEach((el) => markVisible(el));
+        } else {
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const el = entry.target;
+                  markVisible(el);
+                  obs.unobserve(el);
+                }
+              });
+            },
+            { threshold: 0.18, rootMargin: '0px 0px -10% 0px' }
+          );
+
+          revealElements.forEach((el) => observer.observe(el));
+
+          if (typeof prefersReducedMotion.addEventListener === 'function') {
+            prefersReducedMotion.addEventListener('change', (event) => {
+              if (event.matches) {
+                revealElements.forEach((el) => markVisible(el));
+              }
+            });
+          }
+        }
+      }
+    } catch (e) {}
+
     // initialize WOW for other elements after CSS-stagger setup
     if (typeof WOW !== 'undefined') {
       new WOW().init();

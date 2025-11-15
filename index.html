@@ -35,10 +35,64 @@
 </head>
 
 <body class="page-is-loading">
+  <!-- Inline SVG symbol sprite for reusable icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M8 21h8M12 17a3 3 0 003-3v-2.126a6 6 0 004-5.74V4a1 1 0 00-1-1h-2V2H8v1H6a1 1 0 00-1 1v2.134a6 6 0 004 5.74V14a3 3 0 003 3z" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 6H3v1a4 4 0 004 4m12-5h2v1a4 4 0 01-4 4" />
+    </symbol>
+    <symbol id="icon-medal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="12" cy="9" r="4.5" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.75 13.25L7 22l5-2 5 2-1.75-8.75" />
+    </symbol>
+    <symbol id="icon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="8" y="3" width="8" height="12" rx="4" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 17v4m-4 0h8M5 11a7 7 0 0014 0" />
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.383 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.384-2.46a1 1 0 00-1.176 0l-3.384 2.46c-.784.57-1.838-.196-1.539-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.383-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z" />
+    </symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="2" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m9 6h-3m-6 9v-3M3 12h3" />
+    </symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 6V4a2 2 0 012-2h2a2 2 0 012 2v2" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 13h18" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M10 12h4" />
+    </symbol>
+    <symbol id="icon-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <ellipse cx="12" cy="6" rx="7" ry="3" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 9v6c0 1.657 3.134 3 7 3s7-1.343 7-3V9" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12c0 1.657 3.134 3 7 3s7-1.343 7-3" />
+    </symbol>
+    <symbol id="icon-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 4.5v15m0-15A3.75 3.75 0 008.25 8.25v7.5A3.75 3.75 0 0012 19.5m0-15a3.75 3.75 0 013.75 3.75v7.5A3.75 3.75 0 0112 19.5" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 8.25A3.75 3.75 0 009.75 12 3.75 3.75 0 006 15.75" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M18 8.25A3.75 3.75 0 0014.25 12 3.75 3.75 0 0018 15.75" />
+    </symbol>
+    <symbol id="icon-heartbeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M21 8.25c0 6-9 12-9 12s-9-6-9-12a5.25 5.25 0 019-3.75A5.25 5.25 0 0121 8.25z" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 8.25h3l2.25 4.5 2.25-9 2.25 9 2.25-4.5h3" />
+    </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12h19.5" />
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 2.25c2.25 2.25 3.75 5.25 3.75 9s-1.5 6.75-3.75 9c-2.25-2.25-3.75-5.25-3.75-9s1.5-6.75 3.75-9z" />
+    </symbol>
+  </svg>
   <!-- ====== Navbar Section Start -->
   <div
     class="ud-header fixed top-0 left-0 z-40 flex items-center w-full transition-all duration-300 shadow-md bg-primary/95 backdrop-blur-sm">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.05s">
       <div class="relative flex items-center justify-between -mx-4">
         <div class="max-w-full px-4 w-60">
           <a href="index.html" class="block w-full py-5 navbar-logo">
@@ -159,7 +213,7 @@
 
   <!-- ====== Hero Section Start -->
   <div id="home" class="relative overflow-hidden bg-primary dark:bg-dark pt-[120px] md:pt-[130px] lg:pt-[160px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.05s">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full px-4">
           <div class="hero-content wow fadeInUp stagger mx-auto max-w-[780px] text-center" data-wow-delay=".2s">
@@ -171,6 +225,41 @@
               Çemberlitaş Gençlik Merkezi bünyesinde kurulan yapay zeka takımı. Sağlıkta yapay zeka projeleri
               geliştiriyor, yarışmalarda Türkiye derecesi kazanıyoruz.
             </p>
+            <div class="hero-highlight-grid reveal-on-scroll" data-reveal-delay="0.08s">
+              <article class="hero-highlight" data-tone="sunrise">
+                <div class="hero-highlight__icon">
+                  <svg aria-hidden="true">
+                    <use href="#icon-brain"></use>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hero-highlight__title">Sağlıkta Yapay Zeka</p>
+                  <p class="hero-highlight__desc">Medikal görüntüleme, NLP ve klinik karar destek çözümleri geliştiriyoruz.</p>
+                </div>
+              </article>
+              <article class="hero-highlight" data-tone="sky">
+                <div class="hero-highlight__icon">
+                  <svg aria-hidden="true">
+                    <use href="#icon-heartbeat"></use>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hero-highlight__title">Somut Etki</p>
+                  <p class="hero-highlight__desc">3000+ hastanın verisiyle eğitim alan projelerimiz sahada doğrulandı.</p>
+                </div>
+              </article>
+              <article class="hero-highlight" data-tone="mint">
+                <div class="hero-highlight__icon">
+                  <svg aria-hidden="true">
+                    <use href="#icon-globe"></use>
+                  </svg>
+                </div>
+                <div>
+                  <p class="hero-highlight__title">Mentorluk &amp; Topluluk</p>
+                  <p class="hero-highlight__desc">15+ gönüllü ile gençlere atölyeler düzenleyip deneyimimizi paylaşıyoruz.</p>
+                </div>
+              </article>
+            </div>
             <ul class="flex flex-wrap items-center justify-center gap-5 mb-10">
               <li>
                 <a href="#contact"
@@ -195,262 +284,53 @@
               <p class="mb-6 text-base font-medium text-center text-white">
                 Başarılarımız
               </p>
-              <div class="flex items-center justify-center gap-4 text-center wow fadeInUp flex-wrap"
-                data-wow-delay=".3s">
-                <!-- 3. Teknofest -->
-                <div
-                  class="group relative overflow-hidden text-white/90 hover:text-white transition-all duration-300 px-6 py-4 rounded-xl backdrop-blur-sm border hover:scale-105 cursor-pointer min-w-[160px]"
-                  style="background: linear-gradient(135deg, rgba(252, 211, 77, 0.2), rgba(251, 191, 36, 0.2)); border-color: rgba(252, 211, 77, 0.2);">
-                  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style="background: linear-gradient(to right, rgba(252, 211, 77, 0.1), rgba(251, 146, 60, 0.1));">
+              <div class="achievement-grid reveal-on-scroll" data-reveal-delay="0.12s">
+                <article class="achievement-card" data-theme="sunrise">
+                  <div class="achievement-card__icon">
+                    <svg aria-hidden="true">
+                      <use href="#icon-medal"></use>
+                    </svg>
                   </div>
-                  <div class="relative z-10">
-                    <div class="text-5xl font-bold mb-2 drop-shadow-lg text-white">
-                      3.
-                    </div>
-                    <div class="text-sm font-semibold text-white">Teknofest Türkiye</div>
+                  <span class="achievement-card__eyebrow">Teknofest Türkiye</span>
+                  <p class="achievement-card__title">Türkiye 3.lüğü</p>
+                  <span class="achievement-card__meta">Sağlıkta Yapay Zeka</span>
+                </article>
+                <article class="achievement-card" data-theme="emerald">
+                  <div class="achievement-card__icon">
+                    <svg aria-hidden="true">
+                      <use href="#icon-trophy"></use>
+                    </svg>
                   </div>
-                  <div
-                    class="absolute -bottom-2 -right-2 text-6xl opacity-10 group-hover:opacity-20 transition-opacity">
-                    🥉
+                  <span class="achievement-card__eyebrow">DataMedX Hackathon</span>
+                  <p class="achievement-card__title">Şampiyonluk</p>
+                  <span class="achievement-card__meta">NLP ile Kanser Tespiti</span>
+                </article>
+                <article class="achievement-card" data-theme="sky">
+                  <div class="achievement-card__icon">
+                    <svg aria-hidden="true">
+                      <use href="#icon-star"></use>
+                    </svg>
                   </div>
-                </div>
-
-                <!-- 1. DataMedX -->
-                <div
-                  class="group relative overflow-hidden text-white/90 hover:text-white transition-all duration-300 px-6 py-4 rounded-xl backdrop-blur-sm border hover:scale-105 cursor-pointer min-w-[160px]"
-                  style="background: linear-gradient(135deg, rgba(134, 239, 172, 0.2), rgba(52, 211, 153, 0.2)); border-color: rgba(134, 239, 172, 0.2);">
-                  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style="background: linear-gradient(to right, rgba(74, 222, 128, 0.1), rgba(16, 185, 129, 0.1));">
+                  <span class="achievement-card__eyebrow">İTÜ MostrAI 2025</span>
+                  <p class="achievement-card__title">Jüri Özel Ödülü</p>
+                  <span class="achievement-card__meta">Konum Bazlı Reklam</span>
+                </article>
+                <article class="achievement-card achievement-card--featured" data-theme="violet">
+                  <div class="achievement-card__icon">
+                    <svg aria-hidden="true">
+                      <use href="#icon-mic"></use>
+                    </svg>
                   </div>
-                  <div class="relative z-10">
-                    <div class="text-5xl font-bold mb-2 drop-shadow-lg text-white">
-                      1.
-                    </div>
-                    <div class="text-sm font-semibold text-white">DataMedX Hackathon</div>
-                  </div>
-                  <div
-                    class="absolute -bottom-2 -right-2 text-6xl opacity-10 group-hover:opacity-20 transition-opacity">
-                    🥇
-                  </div>
-                </div>
-
-                <!-- İTÜ Jüri Özel -->
-                <div
-                  class="group relative overflow-hidden text-white/90 hover:text-white transition-all duration-300 px-6 py-4 rounded-xl backdrop-blur-sm border hover:scale-105 cursor-pointer min-w-[160px]"
-                  style="background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(34, 211, 238, 0.2)); border-color: rgba(96, 165, 250, 0.2);">
-                  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style="background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));">
-                  </div>
-                  <div class="relative z-10">
-                    <div class="text-5xl mb-2 drop-shadow-lg transform group-hover:scale-110 transition-transform">🏆
-                    </div>
-                    <div class="text-sm font-semibold text-white">İTÜ Jüri Özel Ödülü</div>
-                  </div>
-                  <div
-                    class="absolute -bottom-2 -right-2 text-6xl opacity-10 group-hover:opacity-20 transition-opacity">
-                    ⭐
-                  </div>
-                </div>
-
-                <!-- En İyi Sunum -->
-                <div
-                  class="group relative overflow-hidden text-white/90 hover:text-white transition-all duration-300 px-6 py-4 rounded-xl backdrop-blur-sm border hover:scale-105 cursor-pointer min-w-[160px]"
-                  style="background: linear-gradient(135deg, rgba(192, 132, 252, 0.2), rgba(244, 114, 182, 0.2)); border-color: rgba(192, 132, 252, 0.2);">
-                  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style="background: linear-gradient(to right, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));">
-                  </div>
-                  <div class="relative z-10">
-                    <div class="text-5xl mb-2 drop-shadow-lg transform group-hover:scale-110 transition-transform">🎯
-                    </div>
-                    <div class="text-sm font-semibold text-white">En İyi Sunum</div>
-                  </div>
-                  <div
-                    class="absolute -bottom-2 -right-2 text-6xl opacity-10 group-hover:opacity-20 transition-opacity">
-                    🎤
-                  </div>
-                </div>
+                  <span class="achievement-card__eyebrow">Teknofest 2025</span>
+                  <p class="achievement-card__title">En İyi Sunum</p>
+                  <span class="achievement-card__meta">Proje Sunum Performansı</span>
+                </article>
+              </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="w-full px-4">
-          <div class="wow fadeInUp relative z-10 mx-auto max-w-[845px]" data-wow-delay=".25s">
-            <div class="mt-16">
-              <img src="./assets/images/hero/hero-image.jpg" alt="Neuronauts Takımı"
-                class="max-w-full mx-auto rounded-t-xl rounded-tr-xl" />
-            </div>
-            <div class="absolute -left-9 bottom-0 z-[-1]">
-              <svg width="134" height="106" viewBox="0 0 134 106" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="1.66667" cy="104" r="1.66667" transform="rotate(-90 1.66667 104)" fill="white" />
-                <circle cx="16.3333" cy="104" r="1.66667" transform="rotate(-90 16.3333 104)" fill="white" />
-                <circle cx="31" cy="104" r="1.66667" transform="rotate(-90 31 104)" fill="white" />
-                <circle cx="45.6667" cy="104" r="1.66667" transform="rotate(-90 45.6667 104)" fill="white" />
-                <circle cx="60.3333" cy="104" r="1.66667" transform="rotate(-90 60.3333 104)" fill="white" />
-                <circle cx="88.6667" cy="104" r="1.66667" transform="rotate(-90 88.6667 104)" fill="white" />
-                <circle cx="117.667" cy="104" r="1.66667" transform="rotate(-90 117.667 104)" fill="white" />
-                <circle cx="74.6667" cy="104" r="1.66667" transform="rotate(-90 74.6667 104)" fill="white" />
-                <circle cx="103" cy="104" r="1.66667" transform="rotate(-90 103 104)" fill="white" />
-                <circle cx="132" cy="104" r="1.66667" transform="rotate(-90 132 104)" fill="white" />
-                <circle cx="1.66667" cy="89.3333" r="1.66667" transform="rotate(-90 1.66667 89.3333)" fill="white" />
-                <circle cx="16.3333" cy="89.3333" r="1.66667" transform="rotate(-90 16.3333 89.3333)" fill="white" />
-                <circle cx="31" cy="89.3333" r="1.66667" transform="rotate(-90 31 89.3333)" fill="white" />
-                <circle cx="45.6667" cy="89.3333" r="1.66667" transform="rotate(-90 45.6667 89.3333)" fill="white" />
-                <circle cx="60.3333" cy="89.3338" r="1.66667" transform="rotate(-90 60.3333 89.3338)" fill="white" />
-                <circle cx="88.6667" cy="89.3338" r="1.66667" transform="rotate(-90 88.6667 89.3338)" fill="white" />
-                <circle cx="117.667" cy="89.3338" r="1.66667" transform="rotate(-90 117.667 89.3338)" fill="white" />
-                <circle cx="74.6667" cy="89.3338" r="1.66667" transform="rotate(-90 74.6667 89.3338)" fill="white" />
-                <circle cx="103" cy="89.3338" r="1.66667" transform="rotate(-90 103 89.3338)" fill="white" />
-                <circle cx="132" cy="89.3338" r="1.66667" transform="rotate(-90 132 89.3338)" fill="white" />
-                <circle cx="1.66667" cy="74.6673" r="1.66667" transform="rotate(-90 1.66667 74.6673)" fill="white" />
-                <circle cx="1.66667" cy="31.0003" r="1.66667" transform="rotate(-90 1.66667 31.0003)" fill="white" />
-                <circle cx="16.3333" cy="74.6668" r="1.66667" transform="rotate(-90 16.3333 74.6668)" fill="white" />
-                <circle cx="16.3333" cy="31.0003" r="1.66667" transform="rotate(-90 16.3333 31.0003)" fill="white" />
-                <circle cx="31" cy="74.6668" r="1.66667" transform="rotate(-90 31 74.6668)" fill="white" />
-                <circle cx="31" cy="31.0003" r="1.66667" transform="rotate(-90 31 31.0003)" fill="white" />
-                <circle cx="45.6667" cy="74.6668" r="1.66667" transform="rotate(-90 45.6667 74.6668)" fill="white" />
-                <circle cx="45.6667" cy="31.0003" r="1.66667" transform="rotate(-90 45.6667 31.0003)" fill="white" />
-                <circle cx="60.3333" cy="74.6668" r="1.66667" transform="rotate(-90 60.3333 74.6668)" fill="white" />
-                <circle cx="60.3333" cy="31.0001" r="1.66667" transform="rotate(-90 60.3333 31.0001)" fill="white" />
-                <circle cx="88.6667" cy="74.6668" r="1.66667" transform="rotate(-90 88.6667 74.6668)" fill="white" />
-                <circle cx="88.6667" cy="31.0001" r="1.66667" transform="rotate(-90 88.6667 31.0001)" fill="white" />
-                <circle cx="117.667" cy="74.6668" r="1.66667" transform="rotate(-90 117.667 74.6668)" fill="white" />
-                <circle cx="117.667" cy="31.0001" r="1.66667" transform="rotate(-90 117.667 31.0001)" fill="white" />
-                <circle cx="74.6667" cy="74.6668" r="1.66667" transform="rotate(-90 74.6667 74.6668)" fill="white" />
-                <circle cx="74.6667" cy="31.0001" r="1.66667" transform="rotate(-90 74.6667 31.0001)" fill="white" />
-                <circle cx="103" cy="74.6668" r="1.66667" transform="rotate(-90 103 74.6668)" fill="white" />
-                <circle cx="103" cy="31.0001" r="1.66667" transform="rotate(-90 103 31.0001)" fill="white" />
-                <circle cx="132" cy="74.6668" r="1.66667" transform="rotate(-90 132 74.6668)" fill="white" />
-                <circle cx="132" cy="31.0001" r="1.66667" transform="rotate(-90 132 31.0001)" fill="white" />
-                <circle cx="1.66667" cy="60.0003" r="1.66667" transform="rotate(-90 1.66667 60.0003)" fill="white" />
-                <circle cx="1.66667" cy="16.3336" r="1.66667" transform="rotate(-90 1.66667 16.3336)" fill="white" />
-                <circle cx="16.3333" cy="60.0003" r="1.66667" transform="rotate(-90 16.3333 60.0003)" fill="white" />
-                <circle cx="16.3333" cy="16.3336" r="1.66667" transform="rotate(-90 16.3333 16.3336)" fill="white" />
-                <circle cx="31" cy="60.0003" r="1.66667" transform="rotate(-90 31 60.0003)" fill="white" />
-                <circle cx="31" cy="16.3336" r="1.66667" transform="rotate(-90 31 16.3336)" fill="white" />
-                <circle cx="45.6667" cy="60.0003" r="1.66667" transform="rotate(-90 45.6667 60.0003)" fill="white" />
-                <circle cx="45.6667" cy="16.3336" r="1.66667" transform="rotate(-90 45.6667 16.3336)" fill="white" />
-                <circle cx="60.3333" cy="60.0003" r="1.66667" transform="rotate(-90 60.3333 60.0003)" fill="white" />
-                <circle cx="60.3333" cy="16.3336" r="1.66667" transform="rotate(-90 60.3333 16.3336)" fill="white" />
-                <circle cx="88.6667" cy="60.0003" r="1.66667" transform="rotate(-90 88.6667 60.0003)" fill="white" />
-                <circle cx="88.6667" cy="16.3336" r="1.66667" transform="rotate(-90 88.6667 16.3336)" fill="white" />
-                <circle cx="117.667" cy="60.0003" r="1.66667" transform="rotate(-90 117.667 60.0003)" fill="white" />
-                <circle cx="117.667" cy="16.3336" r="1.66667" transform="rotate(-90 117.667 16.3336)" fill="white" />
-                <circle cx="74.6667" cy="60.0003" r="1.66667" transform="rotate(-90 74.6667 60.0003)" fill="white" />
-                <circle cx="74.6667" cy="16.3336" r="1.66667" transform="rotate(-90 74.6667 16.3336)" fill="white" />
-                <circle cx="103" cy="60.0003" r="1.66667" transform="rotate(-90 103 60.0003)" fill="white" />
-                <circle cx="103" cy="16.3336" r="1.66667" transform="rotate(-90 103 16.3336)" fill="white" />
-                <circle cx="132" cy="60.0003" r="1.66667" transform="rotate(-90 132 60.0003)" fill="white" />
-                <circle cx="132" cy="16.3336" r="1.66667" transform="rotate(-90 132 16.3336)" fill="white" />
-                <circle cx="1.66667" cy="45.3336" r="1.66667" transform="rotate(-90 1.66667 45.3336)" fill="white" />
-                <circle cx="1.66667" cy="1.66683" r="1.66667" transform="rotate(-90 1.66667 1.66683)" fill="white" />
-                <circle cx="16.3333" cy="45.3336" r="1.66667" transform="rotate(-90 16.3333 45.3336)" fill="white" />
-                <circle cx="16.3333" cy="1.66683" r="1.66667" transform="rotate(-90 16.3333 1.66683)" fill="white" />
-                <circle cx="31" cy="45.3336" r="1.66667" transform="rotate(-90 31 45.3336)" fill="white" />
-                <circle cx="31" cy="1.66683" r="1.66667" transform="rotate(-90 31 1.66683)" fill="white" />
-                <circle cx="45.6667" cy="45.3336" r="1.66667" transform="rotate(-90 45.6667 45.3336)" fill="white" />
-                <circle cx="45.6667" cy="1.66683" r="1.66667" transform="rotate(-90 45.6667 1.66683)" fill="white" />
-                <circle cx="60.3333" cy="45.3338" r="1.66667" transform="rotate(-90 60.3333 45.3338)" fill="white" />
-                <circle cx="60.3333" cy="1.66707" r="1.66667" transform="rotate(-90 60.3333 1.66707)" fill="white" />
-                <circle cx="88.6667" cy="45.3338" r="1.66667" transform="rotate(-90 88.6667 45.3338)" fill="white" />
-                <circle cx="88.6667" cy="1.66707" r="1.66667" transform="rotate(-90 88.6667 1.66707)" fill="white" />
-                <circle cx="117.667" cy="45.3338" r="1.66667" transform="rotate(-90 117.667 45.3338)" fill="white" />
-                <circle cx="117.667" cy="1.66707" r="1.66667" transform="rotate(-90 117.667 1.66707)" fill="white" />
-                <circle cx="74.6667" cy="45.3338" r="1.66667" transform="rotate(-90 74.6667 45.3338)" fill="white" />
-                <circle cx="74.6667" cy="1.66707" r="1.66667" transform="rotate(-90 74.6667 1.66707)" fill="white" />
-                <circle cx="103" cy="45.3338" r="1.66667" transform="rotate(-90 103 45.3338)" fill="white" />
-                <circle cx="103" cy="1.66707" r="1.66667" transform="rotate(-90 103 1.66707)" fill="white" />
-                <circle cx="132" cy="45.3338" r="1.66667" transform="rotate(-90 132 45.3338)" fill="white" />
-                <circle cx="132" cy="1.66707" r="1.66667" transform="rotate(-90 132 1.66707)" fill="white" />
-              </svg>
-            </div>
-            <div class="absolute -right-6 -top-6 z-[-1]">
-              <svg width="134" height="106" viewBox="0 0 134 106" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="1.66667" cy="104" r="1.66667" transform="rotate(-90 1.66667 104)" fill="white" />
-                <circle cx="16.3333" cy="104" r="1.66667" transform="rotate(-90 16.3333 104)" fill="white" />
-                <circle cx="31" cy="104" r="1.66667" transform="rotate(-90 31 104)" fill="white" />
-                <circle cx="45.6667" cy="104" r="1.66667" transform="rotate(-90 45.6667 104)" fill="white" />
-                <circle cx="60.3333" cy="104" r="1.66667" transform="rotate(-90 60.3333 104)" fill="white" />
-                <circle cx="88.6667" cy="104" r="1.66667" transform="rotate(-90 88.6667 104)" fill="white" />
-                <circle cx="117.667" cy="104" r="1.66667" transform="rotate(-90 117.667 104)" fill="white" />
-                <circle cx="74.6667" cy="104" r="1.66667" transform="rotate(-90 74.6667 104)" fill="white" />
-                <circle cx="103" cy="104" r="1.66667" transform="rotate(-90 103 104)" fill="white" />
-                <circle cx="132" cy="104" r="1.66667" transform="rotate(-90 132 104)" fill="white" />
-                <circle cx="1.66667" cy="89.3333" r="1.66667" transform="rotate(-90 1.66667 89.3333)" fill="white" />
-                <circle cx="16.3333" cy="89.3333" r="1.66667" transform="rotate(-90 16.3333 89.3333)" fill="white" />
-                <circle cx="31" cy="89.3333" r="1.66667" transform="rotate(-90 31 89.3333)" fill="white" />
-                <circle cx="45.6667" cy="89.3333" r="1.66667" transform="rotate(-90 45.6667 89.3333)" fill="white" />
-                <circle cx="60.3333" cy="89.3338" r="1.66667" transform="rotate(-90 60.3333 89.3338)" fill="white" />
-                <circle cx="88.6667" cy="89.3338" r="1.66667" transform="rotate(-90 88.6667 89.3338)" fill="white" />
-                <circle cx="117.667" cy="89.3338" r="1.66667" transform="rotate(-90 117.667 89.3338)" fill="white" />
-                <circle cx="74.6667" cy="89.3338" r="1.66667" transform="rotate(-90 74.6667 89.3338)" fill="white" />
-                <circle cx="103" cy="89.3338" r="1.66667" transform="rotate(-90 103 89.3338)" fill="white" />
-                <circle cx="132" cy="89.3338" r="1.66667" transform="rotate(-90 132 89.3338)" fill="white" />
-                <circle cx="1.66667" cy="74.6673" r="1.66667" transform="rotate(-90 1.66667 74.6673)" fill="white" />
-                <circle cx="1.66667" cy="31.0003" r="1.66667" transform="rotate(-90 1.66667 31.0003)" fill="white" />
-                <circle cx="16.3333" cy="74.6668" r="1.66667" transform="rotate(-90 16.3333 74.6668)" fill="white" />
-                <circle cx="16.3333" cy="31.0003" r="1.66667" transform="rotate(-90 16.3333 31.0003)" fill="white" />
-                <circle cx="31" cy="74.6668" r="1.66667" transform="rotate(-90 31 74.6668)" fill="white" />
-                <circle cx="31" cy="31.0003" r="1.66667" transform="rotate(-90 31 31.0003)" fill="white" />
-                <circle cx="45.6667" cy="74.6668" r="1.66667" transform="rotate(-90 45.6667 74.6668)" fill="white" />
-                <circle cx="45.6667" cy="31.0003" r="1.66667" transform="rotate(-90 45.6667 31.0003)" fill="white" />
-                <circle cx="60.3333" cy="74.6668" r="1.66667" transform="rotate(-90 60.3333 74.6668)" fill="white" />
-                <circle cx="60.3333" cy="31.0001" r="1.66667" transform="rotate(-90 60.3333 31.0001)" fill="white" />
-                <circle cx="88.6667" cy="74.6668" r="1.66667" transform="rotate(-90 88.6667 74.6668)" fill="white" />
-                <circle cx="88.6667" cy="31.0001" r="1.66667" transform="rotate(-90 88.6667 31.0001)" fill="white" />
-                <circle cx="117.667" cy="74.6668" r="1.66667" transform="rotate(-90 117.667 74.6668)" fill="white" />
-                <circle cx="117.667" cy="31.0001" r="1.66667" transform="rotate(-90 117.667 31.0001)" fill="white" />
-                <circle cx="74.6667" cy="74.6668" r="1.66667" transform="rotate(-90 74.6667 74.6668)" fill="white" />
-                <circle cx="74.6667" cy="31.0001" r="1.66667" transform="rotate(-90 74.6667 31.0001)" fill="white" />
-                <circle cx="103" cy="74.6668" r="1.66667" transform="rotate(-90 103 74.6668)" fill="white" />
-                <circle cx="103" cy="31.0001" r="1.66667" transform="rotate(-90 103 31.0001)" fill="white" />
-                <circle cx="132" cy="74.6668" r="1.66667" transform="rotate(-90 132 74.6668)" fill="white" />
-                <circle cx="132" cy="31.0001" r="1.66667" transform="rotate(-90 132 31.0001)" fill="white" />
-                <circle cx="1.66667" cy="60.0003" r="1.66667" transform="rotate(-90 1.66667 60.0003)" fill="white" />
-                <circle cx="1.66667" cy="16.3336" r="1.66667" transform="rotate(-90 1.66667 16.3336)" fill="white" />
-                <circle cx="16.3333" cy="60.0003" r="1.66667" transform="rotate(-90 16.3333 60.0003)" fill="white" />
-                <circle cx="16.3333" cy="16.3336" r="1.66667" transform="rotate(-90 16.3333 16.3336)" fill="white" />
-                <circle cx="31" cy="60.0003" r="1.66667" transform="rotate(-90 31 60.0003)" fill="white" />
-                <circle cx="31" cy="16.3336" r="1.66667" transform="rotate(-90 31 16.3336)" fill="white" />
-                <circle cx="45.6667" cy="60.0003" r="1.66667" transform="rotate(-90 45.6667 60.0003)" fill="white" />
-                <circle cx="45.6667" cy="16.3336" r="1.66667" transform="rotate(-90 45.6667 16.3336)" fill="white" />
-                <circle cx="60.3333" cy="60.0003" r="1.66667" transform="rotate(-90 60.3333 60.0003)" fill="white" />
-                <circle cx="60.3333" cy="16.3336" r="1.66667" transform="rotate(-90 60.3333 16.3336)" fill="white" />
-                <circle cx="88.6667" cy="60.0003" r="1.66667" transform="rotate(-90 88.6667 60.0003)" fill="white" />
-                <circle cx="88.6667" cy="16.3336" r="1.66667" transform="rotate(-90 88.6667 16.3336)" fill="white" />
-                <circle cx="117.667" cy="60.0003" r="1.66667" transform="rotate(-90 117.667 60.0003)" fill="white" />
-                <circle cx="117.667" cy="16.3336" r="1.66667" transform="rotate(-90 117.667 16.3336)" fill="white" />
-                <circle cx="74.6667" cy="60.0003" r="1.66667" transform="rotate(-90 74.6667 60.0003)" fill="white" />
-                <circle cx="74.6667" cy="16.3336" r="1.66667" transform="rotate(-90 74.6667 16.3336)" fill="white" />
-                <circle cx="103" cy="60.0003" r="1.66667" transform="rotate(-90 103 60.0003)" fill="white" />
-                <circle cx="103" cy="16.3336" r="1.66667" transform="rotate(-90 103 16.3336)" fill="white" />
-                <circle cx="132" cy="60.0003" r="1.66667" transform="rotate(-90 132 60.0003)" fill="white" />
-                <circle cx="132" cy="16.3336" r="1.66667" transform="rotate(-90 132 16.3336)" fill="white" />
-                <circle cx="1.66667" cy="45.3336" r="1.66667" transform="rotate(-90 1.66667 45.3336)" fill="white" />
-                <circle cx="1.66667" cy="1.66683" r="1.66667" transform="rotate(-90 1.66667 1.66683)" fill="white" />
-                <circle cx="16.3333" cy="45.3336" r="1.66667" transform="rotate(-90 16.3333 45.3336)" fill="white" />
-                <circle cx="16.3333" cy="1.66683" r="1.66667" transform="rotate(-90 16.3333 1.66683)" fill="white" />
-                <circle cx="31" cy="45.3336" r="1.66667" transform="rotate(-90 31 45.3336)" fill="white" />
-                <circle cx="31" cy="1.66683" r="1.66667" transform="rotate(-90 31 1.66683)" fill="white" />
-                <circle cx="45.6667" cy="45.3336" r="1.66667" transform="rotate(-90 45.6667 45.3336)" fill="white" />
-                <circle cx="45.6667" cy="1.66683" r="1.66667" transform="rotate(-90 45.6667 1.66683)" fill="white" />
-                <circle cx="60.3333" cy="45.3338" r="1.66667" transform="rotate(-90 60.3333 45.3338)" fill="white" />
-                <circle cx="60.3333" cy="1.66707" r="1.66667" transform="rotate(-90 60.3333 1.66707)" fill="white" />
-                <circle cx="88.6667" cy="45.3338" r="1.66667" transform="rotate(-90 88.6667 45.3338)" fill="white" />
-                <circle cx="88.6667" cy="1.66707" r="1.66667" transform="rotate(-90 88.6667 1.66707)" fill="white" />
-                <circle cx="117.667" cy="45.3338" r="1.66667" transform="rotate(-90 117.667 45.3338)" fill="white" />
-                <circle cx="117.667" cy="1.66707" r="1.66667" transform="rotate(-90 117.667 1.66707)" fill="white" />
-                <circle cx="74.6667" cy="45.3338" r="1.66667" transform="rotate(-90 74.6667 45.3338)" fill="white" />
-                <circle cx="74.6667" cy="1.66707" r="1.66667" transform="rotate(-90 74.6667 1.66707)" fill="white" />
-                <circle cx="103" cy="45.3338" r="1.66667" transform="rotate(-90 103 45.3338)" fill="white" />
-                <circle cx="103" cy="1.66707" r="1.66667" transform="rotate(-90 103 1.66707)" fill="white" />
-                <circle cx="132" cy="45.3338" r="1.66667" transform="rotate(-90 132 45.3338)" fill="white" />
-                <circle cx="132" cy="1.66707" r="1.66667" transform="rotate(-90 132 1.66707)" fill="white" />
-              </svg>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -458,7 +338,7 @@
 
   <!-- ====== Features Section Start -->
   <section id="about" class="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.12s">
       <div class="flex flex-wrap -mx-4">
         <div class="w-full px-4">
           <div class="mx-auto mb-12 max-w-[485px] text-center lg:mb-[70px]">
@@ -611,7 +491,7 @@
 
   <!-- ====== About Section Start -->
   <section id="about" class="bg-gray-1 pb-8 pt-20 dark:bg-dark-2 lg:pb-[70px] lg:pt-[120px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.24s">
       <div class="wow fadeInUp" data-wow-delay=".2s">
         <div class="flex flex-wrap items-center -mx-4">
           <div class="w-full px-4 lg:w-1/2">
@@ -721,7 +601,7 @@
 
   <!-- ====== Projects Section Start -->
   <section id="projects" class="overflow-hidden bg-white py-20 dark:bg-dark md:py-[120px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.12s">
       <div class="flex flex-wrap justify-center -mx-4">
         <div class="w-full px-4">
           <div class="mx-auto mb-[60px] max-w-[485px] text-center">
@@ -744,12 +624,13 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gray-1 dark:bg-dark-2">
-                  <svg class="w-20 h-20 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
-                  </svg>
+                <div class="card-hero mb-6" data-tone="sunrise">
+                  <div class="card-hero__icon">
+                    <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
+                    </svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -761,27 +642,31 @@
                   ödülü kazandık.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                  </div>
-                  <span class="text-sm text-body-color dark:text-dark-6">Türkiye 3.lüğü</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="sunrise">
+                    <svg aria-hidden="true"><use href="#icon-medal"></use></svg>
+                    Türkiye 3.lüğü
+                  </span>
+                  <span class="pill-badge" data-tone="violet">
+                    <svg aria-hidden="true"><use href="#icon-mic"></use></svg>
+                    En İyi Sunum
+                  </span>
                 </div>
+                <p class="card-footnote">Teknofest başarısı</p>
               </div>
             </div>
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gray-1 dark:bg-dark-2">
-                  <svg class="w-20 h-20 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                    <path fill-rule="evenodd"
-                      d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                      clip-rule="evenodd" />
-                  </svg>
+                <div class="card-hero mb-6" data-tone="violet">
+                  <div class="card-hero__icon">
+                    <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                      <path fill-rule="evenodd"
+                        d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -792,26 +677,26 @@
                   Öğrenme deneyimini geliştiren yapay zeka destekli eğitim platformları ve akıllı öğrenme asistanları.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                  </div>
-                  <span class="text-sm text-body-color dark:text-dark-6">Yenilikçi Yaklaşım</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="violet">
+                    <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                    Yenilikçi Yaklaşım
+                  </span>
                 </div>
+                <p class="card-footnote">Eğitimde dönüşüm</p>
               </div>
             </div>
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gray-1 dark:bg-dark-2">
-                  <svg class="w-20 h-20 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd" />
-                  </svg>
+                <div class="card-hero mb-6" data-tone="ocean">
+                  <div class="card-hero__icon">
+                    <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -822,27 +707,27 @@
                   Seyahat akışını optimize eden, uçuş ve tren gecikmelerini önceden tahmin eden akıllı sistem.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                  </div>
-                  <span class="text-sm text-body-color dark:text-dark-6">Akıllı Tahmin</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="sky">
+                    <svg aria-hidden="true"><use href="#icon-target"></use></svg>
+                    Akıllı Tahmin
+                  </span>
                 </div>
+                <p class="card-footnote">Ulaşım için öngörü</p>
               </div>
             </div>
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gray-1 dark:bg-dark-2">
-                  <svg class="w-20 h-20 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                    <path fill-rule="evenodd"
-                      d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd" />
-                  </svg>
+                <div class="card-hero mb-6" data-tone="emerald">
+                  <div class="card-hero__icon">
+                    <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                      <path fill-rule="evenodd"
+                        d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -853,26 +738,26 @@
                   Beyin MRI görüntülerinden nörolojik hastalıkları tespit eden derin öğrenme tabanlı sistem.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                  </div>
-                  <span class="text-sm text-body-color dark:text-dark-6">Medikal AI</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="emerald">
+                    <svg aria-hidden="true"><use href="#icon-target"></use></svg>
+                    Medikal AI
+                  </span>
                 </div>
+                <p class="card-footnote">Sağlık analizi</p>
               </div>
             </div>
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gray-1 dark:bg-dark-2">
-                  <svg class="w-20 h-20 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
-                      clip-rule="evenodd" />
-                  </svg>
+                <div class="card-hero mb-6" data-tone="mint">
+                  <div class="card-hero__icon">
+                    <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -883,26 +768,26 @@
                   Elinizdeki malzemelere göre kişiselleştirilmiş yemek tarifleri öneren akıllı asistan.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                  </div>
-                  <span class="text-sm text-body-color dark:text-dark-6">Günlük Yaşam</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="mint">
+                    <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                    Günlük Yaşam
+                  </span>
                 </div>
+                <p class="card-footnote">Kişisel öneriler</p>
               </div>
             </div>
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gray-1 dark:bg-dark-2">
-                  <svg class="w-20 h-20 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                      clip-rule="evenodd" />
-                  </svg>
+                <div class="card-hero mb-6" data-tone="sky">
+                  <div class="card-hero__icon">
+                    <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -913,14 +798,13 @@
                   X-ray görüntülerinden pnömoni ve diğer akciğer hastalıklarını tespit eden yapay zeka modeli.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                    <span class="text-yellow-500">⭐</span>
-                  </div>
-                  <span class="text-sm text-body-color dark:text-dark-6">Erken Teşhis</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="sunrise">
+                    <svg aria-hidden="true"><use href="#icon-target"></use></svg>
+                    Erken Teşhis
+                  </span>
                 </div>
+                <p class="card-footnote">Sağlıkta hız</p>
               </div>
             </div>
           </div>
@@ -950,7 +834,7 @@
 
   <!-- ====== Competitions Section Start -->
   <section id="competitions" class="overflow-hidden bg-gray-1 dark:bg-dark-2 py-20 md:py-[120px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.18s">
       <div class="flex flex-wrap justify-center -mx-4">
         <div class="w-full px-4">
           <div class="mx-auto mb-[60px] max-w-[485px] text-center">
@@ -972,9 +856,10 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500">
-                  <span class="text-8xl">🏆</span>
+                <div class="card-hero mb-6" data-tone="sunrise">
+                  <div class="card-hero__icon">
+                    <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -986,21 +871,26 @@
                   Sunum ödülü.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">🥉</span>
-                    <span class="text-yellow-500">🎤</span>
-                  </div>
-                  <span class="text-sm font-semibold text-primary">3.lük + En İyi Sunum</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="sunrise">
+                    <svg aria-hidden="true"><use href="#icon-medal"></use></svg>
+                    3.lük
+                  </span>
+                  <span class="pill-badge" data-tone="violet">
+                    <svg aria-hidden="true"><use href="#icon-mic"></use></svg>
+                    En İyi Sunum
+                  </span>
                 </div>
+                <p class="card-footnote">Festival başarıları</p>
               </div>
             </div>
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-pink-400 to-purple-500">
-                  <span class="text-8xl">🥇</span>
+                <div class="card-hero mb-6" data-tone="magenta">
+                  <div class="card-hero__icon">
+                    <svg aria-hidden="true"><use href="#icon-medal"></use></svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -1012,21 +902,26 @@
                   büyük ödül.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">🏆</span>
-                    <span class="text-yellow-500">💰</span>
-                  </div>
-                  <span class="text-sm font-semibold text-primary">1.lik + Büyük Ödül</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="sunrise">
+                    <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
+                    Şampiyonluk
+                  </span>
+                  <span class="pill-badge" data-tone="magenta">
+                    <svg aria-hidden="true"><use href="#icon-coins"></use></svg>
+                    Büyük Ödül
+                  </span>
                 </div>
+                <p class="card-footnote">Hackathon zaferi</p>
               </div>
             </div>
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-blue-400 to-cyan-500">
-                  <span class="text-8xl">⭐</span>
+                <div class="card-hero mb-6" data-tone="sky">
+                  <div class="card-hero__icon">
+                    <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -1038,21 +933,26 @@
                   staj hakkı.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">🌟</span>
-                    <span class="text-yellow-500">💼</span>
-                  </div>
-                  <span class="text-sm font-semibold text-primary">Jüri Özel + Staj</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="violet">
+                    <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                    Jüri Özel
+                  </span>
+                  <span class="pill-badge" data-tone="slate">
+                    <svg aria-hidden="true"><use href="#icon-briefcase"></use></svg>
+                    Staj Hakkı
+                  </span>
                 </div>
+                <p class="card-footnote">İTÜ derecesi</p>
               </div>
             </div>
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div
-                  class="mb-6 flex h-[200px] items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-teal-400 to-green-500">
-                  <span class="text-8xl">🎯</span>
+                <div class="card-hero mb-6" data-tone="mint">
+                  <div class="card-hero__icon">
+                    <svg aria-hidden="true"><use href="#icon-target"></use></svg>
+                  </div>
                 </div>
 
                 <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">
@@ -1064,12 +964,13 @@
                   finalisti.
                 </p>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-1">
-                    <span class="text-yellow-500">🎯</span>
-                  </div>
-                  <span class="text-sm font-semibold text-primary">Finalist</span>
+                <div class="card-badges">
+                  <span class="pill-badge" data-tone="mint">
+                    <svg aria-hidden="true"><use href="#icon-target"></use></svg>
+                    Finalist
+                  </span>
                 </div>
+                <p class="card-footnote">Ar-Ge finali</p>
               </div>
             </div>
           </div>
@@ -1098,7 +999,7 @@
   <!-- ====== Competitions Section End -->
 
   <section id="events" class="overflow-hidden bg-white py-20 dark:bg-dark md:py-[120px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.22s">
       <div class="flex flex-wrap justify-center -mx-4">
         <div class="w-full px-4">
           <div class="mx-auto mb-[60px] max-w-[485px] text-center">
@@ -1218,7 +1119,7 @@
 
   <!-- ====== CTA Section Start -->
   <section class="relative z-10 overflow-hidden bg-primary py-20 lg:py-[115px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.26s">
       <div class="relative overflow-hidden">
         <div class="flex flex-wrap items-stretch -mx-4">
           <div class="w-full px-4">
@@ -1265,7 +1166,7 @@
 
   <!-- ====== Team Section Start -->
   <section id="team" class="relative z-20 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.3s">
       <div class="flex flex-wrap -mx-4">
         <div class="w-full px-4">
           <div class="mx-auto mb-[60px] max-w-[510px] text-center">
@@ -1470,7 +1371,7 @@
 
   <!-- ====== Testimonial Section Start -->
   <section id="achievements" class="overflow-hidden bg-gray-1 py-20 dark:bg-dark-2 md:py-[120px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.34s">
       <div class="flex flex-wrap justify-center -mx-4">
         <div class="w-full px-4">
           <div class="mx-auto mb-[60px] max-w-[485px] text-center">
@@ -1492,12 +1393,12 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div class="mb-[18px] flex items-center gap-[2px]">
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
+                <div class="rating-indicator" role="img" aria-label="5 üzerinden 5 yıldız">
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
                 </div>
 
                 <p class="mb-6 text-base text-body-color dark:text-dark-6">
@@ -1506,9 +1407,8 @@
                 </p>
 
                 <div class="flex items-center gap-4">
-                  <div
-                    class="h-[50px] w-[50px] overflow-hidden rounded-full bg-primary flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">🏆</span>
+                  <div class="icon-circle" data-tone="sunrise">
+                    <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
                   </div>
 
                   <div>
@@ -1523,12 +1423,12 @@
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div class="mb-[18px] flex items-center gap-[2px]">
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
+                <div class="rating-indicator" role="img" aria-label="5 üzerinden 5 yıldız">
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
                 </div>
 
                 <p class="mb-6 text-base text-body-color dark:text-dark-6">
@@ -1537,9 +1437,8 @@
                 </p>
 
                 <div class="flex items-center gap-4">
-                  <div
-                    class="h-[50px] w-[50px] overflow-hidden rounded-full bg-primary flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">🎤</span>
+                  <div class="icon-circle" data-tone="violet">
+                    <svg aria-hidden="true"><use href="#icon-mic"></use></svg>
                   </div>
 
                   <div>
@@ -1556,12 +1455,12 @@
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div class="mb-[18px] flex items-center gap-[2px]">
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
+                <div class="rating-indicator" role="img" aria-label="5 üzerinden 5 yıldız">
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
                 </div>
 
                 <p class="mb-6 text-base text-body-color dark:text-dark-6">
@@ -1570,9 +1469,8 @@
                 </p>
 
                 <div class="flex items-center gap-4">
-                  <div
-                    class="h-[50px] w-[50px] overflow-hidden rounded-full bg-primary flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">🥇</span>
+                  <div class="icon-circle" data-tone="magenta">
+                    <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
                   </div>
 
                   <div>
@@ -1589,12 +1487,12 @@
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div class="mb-[18px] flex items-center gap-[2px]">
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
+                <div class="rating-indicator" role="img" aria-label="5 üzerinden 5 yıldız">
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
                 </div>
 
                 <p class="mb-6 text-base text-body-color dark:text-dark-6">
@@ -1603,9 +1501,8 @@
                 </p>
 
                 <div class="flex items-center gap-4">
-                  <div
-                    class="h-[50px] w-[50px] overflow-hidden rounded-full bg-primary flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">⭐</span>
+                  <div class="icon-circle" data-tone="sky">
+                    <svg aria-hidden="true"><use href="#icon-star"></use></svg>
                   </div>
 
                   <div>
@@ -1620,12 +1517,12 @@
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div class="mb-[18px] flex items-center gap-[2px]">
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
+                <div class="rating-indicator" role="img" aria-label="5 üzerinden 5 yıldız">
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
                 </div>
 
                 <p class="mb-6 text-base text-body-color dark:text-dark-6">
@@ -1634,9 +1531,8 @@
                 </p>
 
                 <div class="flex items-center gap-4">
-                  <div
-                    class="h-[50px] w-[50px] overflow-hidden rounded-full bg-primary flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">🎯</span>
+                  <div class="icon-circle" data-tone="mint">
+                    <svg aria-hidden="true"><use href="#icon-target"></use></svg>
                   </div>
 
                   <div>
@@ -1653,12 +1549,12 @@
 
             <div class="swiper-slide">
               <div class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]">
-                <div class="mb-[18px] flex items-center gap-[2px]">
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
-                  <img src="./assets/images/testimonials/icon-star.svg" alt="star icon" />
+                <div class="rating-indicator" role="img" aria-label="5 üzerinden 5 yıldız">
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg aria-hidden="true"><use href="#icon-star"></use></svg>
                 </div>
 
                 <p class="mb-6 text-base text-body-color dark:text-dark-6">
@@ -1667,9 +1563,8 @@
                 </p>
 
                 <div class="flex items-center gap-4">
-                  <div
-                    class="h-[50px] w-[50px] overflow-hidden rounded-full bg-primary flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">🌟</span>
+                  <div class="icon-circle" data-tone="sky">
+                    <svg aria-hidden="true"><use href="#icon-star"></use></svg>
                   </div>
 
                   <div>
@@ -1711,7 +1606,7 @@
   <!-- ====== Goals Section Start -->
   <section id="goals"
     class="relative z-20 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.38s">
       <div class="flex flex-wrap -mx-4">
         <div class="w-full px-4">
           <div class="mx-auto mb-[60px] max-w-[520px] text-center">
@@ -1836,7 +1731,7 @@
   <section id="contact" class="relative py-20 md:py-[120px]">
     <div class="absolute top-0 left-0 w-full h-full -z-1 dark:bg-dark"></div>
     <div class="absolute left-0 top-0 -z-1 h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"></div>
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.42s">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full px-4 lg:w-7/12 xl:w-8/12">
           <div class="ud-contact-content-wrapper">
@@ -1900,25 +1795,25 @@
               Bize Mesaj Gönderin
             </h3>
             <form id="contactForm">
-              <div class="mb-[22px]">
+              <div class="mb-[22px] animated-field" style="--field-delay: 0s;">
                 <label for="fullName" class="block mb-4 text-sm text-body-color dark:text-dark-6">Ad Soyad*</label>
                 <input type="text" name="fullName" id="fullName" placeholder="Adınız Soyadınız" required
-                  class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark dark:text-white placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3" />
+                  class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark dark:text-white placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 animated-input" />
               </div>
-              <div class="mb-[22px]">
+              <div class="mb-[22px] animated-field" style="--field-delay: 0.05s;">
                 <label for="email" class="block mb-4 text-sm text-body-color dark:text-dark-6">E-posta*</label>
                 <input type="email" name="email" id="email" placeholder="ornek@mail.com" required
-                  class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark dark:text-white placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3" />
+                  class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark dark:text-white placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 animated-input" />
               </div>
-              <div class="mb-[22px]">
+              <div class="mb-[22px] animated-field" style="--field-delay: 0.1s;">
                 <label for="phone" class="block mb-4 text-sm text-body-color dark:text-dark-6">Telefon*</label>
                 <input type="text" name="phone" id="phone" placeholder="+90 5XX XXX XX XX" required
-                  class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark dark:text-white placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3" />
+                  class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark dark:text-white placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 animated-input" />
               </div>
-              <div class="mb-[30px]">
+              <div class="mb-[30px] animated-field" style="--field-delay: 0.15s;">
                 <label for="message" class="block mb-4 text-sm text-body-color dark:text-dark-6">Mesaj*</label>
                 <textarea name="message" id="message" rows="3" placeholder="Mesajınızı buraya yazın..." required
-                  class="w-full resize-none border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark dark:text-white placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3"></textarea>
+                  class="w-full resize-none border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark dark:text-white placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 animated-input"></textarea>
               </div>
               <div class="mb-0">
                 <button type="submit" id="submitBtn"
@@ -1962,13 +1857,13 @@
       emailjs.send('service_shdmliq', 'template_h75j2cj', templateParams)
         .then(function (response) {
           formStatus.className = 'mt-4 text-sm text-green-600';
-          formStatus.textContent = '✓ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.';
+          formStatus.textContent = 'Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.';
           document.getElementById('contactForm').reset();
           submitBtn.disabled = false;
           submitBtn.textContent = 'Gönder';
         }, function (error) {
           formStatus.className = 'mt-4 text-sm text-red-600';
-          formStatus.textContent = '✗ Bir hata oluştu. Lütfen tekrar deneyin: ' + error.text;
+          formStatus.textContent = 'Bir hata oluştu. Lütfen tekrar deneyin: ' + error.text;
           submitBtn.disabled = false;
           submitBtn.textContent = 'Gönder';
         });
@@ -1977,7 +1872,7 @@
 
   <!-- ====== Partners Section Start -->
   <section class="pb-20 pt-20 bg-gray-1 dark:bg-dark-2">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.46s">
       <div class="mb-12 text-center">
         <span class="block mb-2 text-lg font-semibold text-primary">
           İş Birliklerimiz
@@ -2068,7 +1963,7 @@
 
   <!-- ====== Footer Section Start -->
   <footer class="wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]" data-wow-delay=".15s">
-    <div class="container px-4 mx-auto">
+    <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.54s">
       <div class="flex flex-wrap -mx-4">
         <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
           <div class="w-full mb-10">
@@ -2211,7 +2106,7 @@
     </div>
 
     <div class="mt-12 border-t border-[#8890A4]/40 py-8 lg:mt-[60px]">
-      <div class="container px-4 mx-auto">
+      <div class="container px-4 mx-auto reveal-on-scroll" data-reveal-delay="0.5s">
         <div class="flex flex-wrap -mx-4">
           <div class="w-full px-4 md:w-2/3 lg:w-1/2">
             <div class="my-1">

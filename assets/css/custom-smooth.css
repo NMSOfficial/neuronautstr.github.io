@@ -219,6 +219,117 @@ a:focus, button:focus, .rounded-md:focus { box-shadow: 0 0 0 6px rgba(59,130,246
   --achievement-icon-bg: rgba(168, 85, 247, 0.24);
 }
 
+/* ----------------------------
+   Hero highlight feature list
+----------------------------- */
+.hero-highlight-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 0 auto 2.25rem;
+  max-width: 720px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+@media (min-width: 640px) {
+  .hero-highlight-grid {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-highlight-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.hero-highlight {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  backdrop-filter: blur(12px);
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.hero-highlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 60%);
+  transition: opacity 360ms var(--soft-ease);
+}
+
+.hero-highlight:hover::after {
+  opacity: 1;
+}
+
+.hero-highlight__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 1rem;
+  background: var(--hero-highlight-icon-bg, linear-gradient(135deg, #3758f9, #1b44c8));
+  color: var(--hero-highlight-icon-color, #fff);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
+}
+
+.hero-highlight__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.hero-highlight__title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.hero-highlight__desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(226, 232, 240, 0.82);
+}
+
+.hero-highlight[data-tone="sunrise"] {
+  --hero-highlight-icon-bg: linear-gradient(135deg, #f97316, #f59e0b);
+}
+
+.hero-highlight[data-tone="sky"] {
+  --hero-highlight-icon-bg: linear-gradient(135deg, #38bdf8, #3b82f6);
+}
+
+.hero-highlight[data-tone="mint"] {
+  --hero-highlight-icon-bg: linear-gradient(135deg, #34d399, #10b981);
+}
+
+.hero-highlight[data-tone="violet"] {
+  --hero-highlight-icon-bg: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+/* ----------------------------
+   Rating indicator pills
+----------------------------- */
+.rating-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+  color: #fbbf24;
+  filter: drop-shadow(0 4px 10px rgba(251, 191, 36, 0.35));
+}
+
+.rating-indicator svg {
+  width: 18px;
+  height: 18px;
+}
+
 @media (max-width: 640px) {
   .achievement-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
